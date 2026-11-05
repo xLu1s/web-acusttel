@@ -1,0 +1,102 @@
+---
+import { nav } from "../data/site";
+import { asset, href } from "../lib/url";
+import { phoneDisplay, phoneTel, email } from "../data/site";
+
+interface Props {
+  overlay?: boolean;
+  current: string;
+}
+const { overlay = false, current } = Astro.props;
+
+function isCurrent(path: string) {
+  if (path === "/") return current === "/";
+  const c = current.endsWith("/") ? current : `${current}/`;
+  return c === path || c.startsWith(path);
+}
+---
+
+<header class:list={["site-header", { "is-overlay": overlay }]} data-header>
+  <div class="topbar">
+    <div class="wrap">
+      <span>Pol. Ind. Benieto · Gandia</span>
+      <span class="topbar-links">
+        <a href={`tel:${phoneTel}`}>{phoneDisplay}</a>
+        <a href={`mailto:${email}`}>{email}</a>
+      </span>
+    </div>
+  </div>
+  <div class="wrap header-row">
+    <a class="logo" href={href("/")} aria-label="Acusttel, inicio">
+      <img src={asset("brand/acusttel.gif")} width="300" height="93" alt="Acusttel" />
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" data-nav-toggle>
+      <span></span>
+      <span class="sr">Abrir menú</span>
+    </button>
+    <nav class="site-nav" id="menu-principal" aria-label="Menú principal" data-nav>
+      <ul>
+        {nav.map((item) => (
+          <li class:list={[{ "has-sub": item.children }]}>
+            <div class="item-row">
+              <a
+                href={item.external ? item.href : href(item.href)}
+                aria-current={isCurrent(item.href) ? "page" : undefined}
+                hreflang={item.label === "Español" ? "es" : undefined}
+                {...(item.external ? { rel: "noopener noreferrer" } : {})}
+              >
+                {item.label}
+              </a>
+              {item.children && (
+                <button class="subtoggle" type="button" aria-expanded="false" data-subtoggle aria-label={`Abrir submenú ${item.label}`}>
+                  ▾
+                </button>
+              )}
+            </div>
+            {item.children && (
+              <ul class="submenu">
+                {item.children.map((child) => (
+                  <li class:list={[{ "has-sub": child.children }]}>
+                    <div class="item-row">
+                      <a
+                        href={child.external ? child.href : href(child.href)}
+                        aria-current={!child.external && isCurrent(child.href) ? "page" : undefined}
+                        {...(child.external ? { rel: "noopener noreferrer", hreflang: child.label === "English" ? "en" : "pl" } : {})}
+                      >
+                        {child.label}
+                      </a>
+                      {child.children && (
+                        <button class="subtoggle" type="button" aria-expanded="false" data-subtoggle aria-label={`Abrir submenú ${child.label}`}>
+                          ▾
+                        </button>
+                      )}
+                    </div>
+                    {child.children && (
+                      <ul class="submenu">
+                        {child.children.map((grand) => (
+                          <li>
+                            <a href={href(grand.href)} aria-current={isCurrent(grand.href) ? "page" : undefined}>{grand.label}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+</style>

@@ -1,0 +1,73 @@
+---
+import { href, asset } from "../lib/url";
+import { offices } from "../data/site";
+import type { Block } from "../data/paginas";
+
+interface Props {
+  blocks: Block[];
+}
+const { blocks } = Astro.props;
+---
+
+<div class="prose">
+  {blocks.map((block) => {
+    if (block.t === "p") return <p>{block.text}</p>;
+    if (block.t === "h2") return <h2>{block.text}</h2>;
+    if (block.t === "h3") return <h3>{block.text}</h3>;
+    if (block.t === "ul") return <ul>{block.items.map((item) => <li>{item}</li>)}</ul>;
+    if (block.t === "ol") return <ol>{block.items.map((item) => <li>{item}</li>)}</ol>;
+    if (block.t === "quote") return <p class="pull">{block.text}</p>;
+    if (block.t === "cards") {
+      return (
+        <div class="grid-2" style="margin:1rem 0 1.4rem;">
+          {block.items.map((card) => (
+            <a class="card" href={href(card.href)}>
+              <h2>{card.title}</h2>
+              <p>{card.text}</p>
+              <span class="more">Ver más</span>
+            </a>
+          ))}
+        </div>
+      );
+    }
+    if (block.t === "links") {
+      return (
+        <p class="actions">
+          {block.items.map((link) => (
+            <a class="btn btn-line" href={link.external ? link.href : href(link.href)} rel={link.external ? "noopener noreferrer" : undefined}>
+              {link.label}
+            </a>
+          ))}
+        </p>
+      );
+    }
+    if (block.t === "offices") {
+      return (
+        <div class="office-grid">
+          {offices.map((office) => (
+            <article class="office">
+              <small>{office.group}</small>
+              <h3>{office.name}</h3>
+              {office.lines.map((line) => <p style="margin:0">{line}</p>)}
+            </article>
+          ))}
+        </div>
+      );
+    }
+    if (block.t === "certs") {
+      return (
+        <div class="seals">
+          <img class="seal" src={asset("brand/iso-9001.webp")} width="610" height="1066" alt="Sello AW Certificación ISO 9001, certificado 02299, certificadora acreditada por ENAC." />
+          <img class="seal" src={asset("brand/iso-14001.webp")} width="610" height="1066" alt="Sello AW Certificación ISO 14001, certificado 02301, certificadora acreditada por ENAC." />
+          <img class="composite" src={asset("brand/certificaciones-acusttel-2024.png")} width="320" height="270" alt="Composición de certificaciones ISO 9001 e ISO 14001 de Acusttel, acreditadas por ENAC." />
+          <p class="full">
+            <a href="https://acusttel.com/wp-content/uploads/2026/02/FI20234-Ed-04-Certificado-ISO-9001_2015_2-en-1-Acreditado.pdf">Certificado ISO 9001 (PDF)</a>
+            {" · "}
+            <a href="https://acusttel.com/wp-content/uploads/2026/02/FI20228-Ed-03-Certificado-ISO-14001_2015-Acreditado-2-en-1-ACUSTTEL.pdf">Certificado ISO 14001 (PDF)</a>
+          </p>
+        </div>
+      );
+    }
+    return null;
+  })}
+</div>

@@ -1,0 +1,18 @@
+---
+import { href } from "../lib/url";
+import { addressLines, email, phoneDisplay, phoneTel } from "../data/site";
+---
+
+<aside class="side-card">
+  <p class="eyebrow">Contacto</p>
+  <a class="tel" href={`tel:${phoneTel}`}>{phoneDisplay}</a>
+  <p><a href={`mailto:${email}`}>{email}</a></p>
+  <p>
+    {addressLines.map((line) => (
+      <>
+        {line}<br />
+      </>
+    ))}
+  </p>
+  <p><a class="btn btn-primary dark" href={href("/solicitud-presupuesto/")}>Pedir presupuesto</a></p>
+</aside>

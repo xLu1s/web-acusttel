@@ -1,0 +1,119 @@
+---
+import { href } from "../lib/url";
+import {
+  activities,
+  budgetSectors,
+  budgetServices,
+  email,
+  helpTopics,
+  howKnown,
+  privacyClause,
+} from "../data/site";
+
+interface Props {
+  variant: "mini" | "contact" | "budget";
+}
+const { variant } = Astro.props;
+const subject = variant === "budget" ? "Solicitud de presupuesto" : variant === "contact" ? "Consulta desde la web" : "Datos de contacto";
+---
+
+<form class="form" data-form data-subject={subject} novalidate>
+  <p class="hp">
+    <label>Deje este campo vacío<input type="text" name="empresa_web" tabindex="-1" autocomplete="off" /></label>
+  </p>
+
+  {variant === "mini" && (
+    <div class="fields">
+      <div class="field"><label for="nombre">Nombre *</label><input id="nombre" name="Nombre" required autocomplete="name" /></div>
+      <div class="field"><label for="telefono">Teléfono *</label><input id="telefono" name="Teléfono" required autocomplete="tel" /></div>
+      <div class="field full"><label for="email">E-mail *</label><input id="email" name="E-mail" type="email" required autocomplete="email" /></div>
+    </div>
+  )}
+
+  {variant === "contact" && (
+    <div class="fields">
+      <div class="field"><label for="empresa">Empresa *</label><input id="empresa" name="Empresa" required autocomplete="organization" /></div>
+      <div class="field"><label for="direccion">Dirección</label><input id="direccion" name="Dirección" autocomplete="street-address" /></div>
+      <div class="field"><label for="poblacion">Población</label><input id="poblacion" name="Población" /></div>
+      <div class="field"><label for="provincia">Provincia</label><input id="provincia" name="Provincia" /></div>
+      <div class="field"><label for="contacto">Persona de contacto *</label><input id="contacto" name="Persona de contacto" required autocomplete="name" /></div>
+      <div class="field"><label for="cargo">Cargo</label><input id="cargo" name="Cargo" /></div>
+      <div class="field"><label for="email">Email *</label><input id="email" name="Email" type="email" required autocomplete="email" /></div>
+      <div class="field"><label for="telefono">Teléfono *</label><input id="telefono" name="Teléfono" required autocomplete="tel" /></div>
+      <div class="field"><label for="fax">Fax</label><input id="fax" name="Fax" /></div>
+      <div class="field"><label for="web">Web</label><input id="web" name="Web" type="url" /></div>
+      <div class="field">
+        <label for="conocido">¿Cómo nos ha conocido?</label>
+        <select id="conocido" name="Cómo nos ha conocido">
+          <option value="">Seleccione</option>
+          {howKnown.map((o) => <option value={o}>{o}</option>)}
+        </select>
+      </div>
+      <div class="field">
+        <label for="actividad">Describa su actividad</label>
+        <select id="actividad" name="Actividad">
+          <option value="">Seleccione</option>
+          {activities.map((o) => <option value={o}>{o}</option>)}
+        </select>
+      </div>
+      <div class="field full">
+        <label for="ayuda">¿En qué podemos ayudarle?</label>
+        <select id="ayuda" name="En qué podemos ayudarle">
+          <option value="">Seleccione</option>
+          {helpTopics.map((o) => <option value={o}>{o}</option>)}
+        </select>
+      </div>
+      <div class="field full"><label for="comentarios">Comentarios</label><textarea id="comentarios" name="Comentarios"></textarea></div>
+    </div>
+  )}
+
+  {variant === "budget" && (
+    <div class="fields">
+      <fieldset class="field full" style="border:0;padding:0;margin:0;">
+        <legend>Tipo</legend>
+        <label class="check"><input type="radio" name="Tipo" value="Empresa" required /> Empresa</label>
+        <label class="check"><input type="radio" name="Tipo" value="Particular" /> Particular</label>
+      </fieldset>
+      <div class="field"><label for="nombre">Nombre *</label><input id="nombre" name="Nombre" required /></div>
+      <div class="field"><label for="contacto">Contacto *</label><input id="contacto" name="Contacto" required /></div>
+      <div class="field"><label for="telefono">Teléfono *</label><input id="telefono" name="Teléfono" required /></div>
+      <div class="field"><label for="direccion">Dirección</label><input id="direccion" name="Dirección" /></div>
+      <div class="field"><label for="cp">Código postal</label><input id="cp" name="Código postal" /></div>
+      <div class="field"><label for="poblacion">Población *</label><input id="poblacion" name="Población" required /></div>
+      <div class="field"><label for="provincia">Provincia</label><input id="provincia" name="Provincia" /></div>
+      <div class="field"><label for="pais">País *</label><input id="pais" name="País" required /></div>
+      <div class="field"><label for="fax">Fax</label><input id="fax" name="Fax" /></div>
+      <div class="field"><label for="email">E-mail *</label><input id="email" name="E-mail" type="email" required /></div>
+      <div class="field">
+        <label for="servicio">¿De qué servicio desea solicitar presupuesto?</label>
+        <select id="servicio" name="Servicio">
+          <option value="">Seleccione</option>
+          {budgetServices.map((o) => <option value={o}>{o}</option>)}
+        </select>
+      </div>
+      <div class="field">
+        <label for="sector">Sector para el desarrollo del proyecto</label>
+        <select id="sector" name="Sector">
+          <option value="">Seleccione</option>
+          {budgetSectors.map((o) => <option value={o}>{o}</option>)}
+        </select>
+      </div>
+      <div class="field full"><label for="comentarios">Comentarios</label><textarea id="comentarios" name="Comentarios"></textarea></div>
+    </div>
+  )}
+
+  <p class="check" style="margin-top:1rem;">
+    <input id="privacidad" name="privacidad" type="checkbox" required />
+    <label for="privacidad">He leído y acepto la <a href={href("/politica-de-privacidad/")}>política de privacidad</a>.</label>
+  </p>
+  <p class="actions"><button class="btn btn-primary dark" type="submit">Enviar</button></p>
+  <p class="form-status" data-status role="status"></p>
+  <p class="clause">Al enviar se abre su programa de correo con el mensaje dirigido a {email}. Esta demostración no almacena los datos en un servidor.</p>
+  <details>
+    <summary>Información sobre protección de datos</summary>
+    <p class="clause">{privacyClause}</p>
+  </details>
+  <noscript>
+    <p>Sin JavaScript, escriba a <a href={`mailto:${email}`}>{email}</a>.</p>
+  </noscript>
+</form>

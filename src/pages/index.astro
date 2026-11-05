@@ -1,0 +1,250 @@
+---
+import Base from "../layouts/Base.astro";
+import LeadForm from "../components/LeadForm.astro";
+import { asset, href } from "../lib/url";
+import { clients } from "../data/site";
+import noticias from "../data/noticias.json";
+import proyectos from "../data/proyectos.json";
+
+const services = [
+  {
+    n: "01",
+    title: "Consultoría acústica",
+    text: "Procesos, tecnología y experiencia para decidir la solución por eficacia, coste y garantía de resultado.",
+    href: "/servicios/consultoria/",
+  },
+  {
+    n: "02",
+    title: "Laboratorio de ensayos",
+    text: "Evaluación de actividades, focos y edificios para contrastar el cumplimiento de la legislación de ruido. Sonox certifica in situ.",
+    href: "/servicios/laboratorio-ensayos/",
+  },
+  {
+    n: "03",
+    title: "Instalaciones acústicas",
+    text: "Del diseño a la ejecución: insonorización, acondicionamiento, tratamientos y pantallas, con garantía de resultados.",
+    href: "/servicios/instalaciones-acusticas/",
+  },
+  {
+    n: "04",
+    title: "Desarrollo de productos",
+    text: "Desarrollo, optimización y certificación de elementos constructivos y de maquinaria, en acústica y en telecomunicación.",
+    href: "/servicios/desarrollo-de-productos/",
+  },
+];
+
+const sectors = [
+  { title: "Industria", href: "/sectores/industria/", image: "industria.webp" },
+  { title: "Desarrollo inmobiliario", href: "/sectores/desarrollo-inmobiliario/", image: "residencial.webp" },
+  { title: "Actividades calificadas", href: "/sectores/actividades-calificadas/", image: "hotel.webp" },
+  { title: "Instalaciones audiovisuales", href: "/sectores/instalaciones-audiovisuales/", image: "estudio.webp" },
+  { title: "Infraestructuras", href: "/sectores/infraestructuras/", image: "tren.webp" },
+];
+
+const featuredSlugs = [
+  "auditorio-de-la-facultad-de-economicas-de-la-universidad-de-murcia-murcia",
+  "auditorio-de-la-ciudad-de-la-luz-de-alicante-alicante",
+  "auditorio-de-la-casa-de-la-cultura-de-real-de-gandia-valencia",
+  "estudio-de-proteccion-acustica-del-nuevo-acceso-ferroviario-de-levante",
+];
+const featured = featuredSlugs
+  .map((slug) => proyectos.find((p) => p.slug === slug))
+  .filter((p) => p != null);
+const latest = noticias.slice(0, 3);
+
+const description =
+  "Consultoría acústica y de telecomunicaciones en Gandia. Más de 20 profesionales de la ingeniería y más de 20 años midiendo, proyectando e instalando soluciones de ruido y vibraciones.";
+---
+
+<Base title="Acusttel" description={description} overlay>
+  <section class="hero">
+    <div class="hero-media">
+      <img src={asset("media/hero-poster.webp")} width="1280" height="720" alt="" fetchpriority="high" />
+      <video
+        data-hero-video
+        data-src={asset("media/hero.mp4")}
+        muted
+        playsinline
+        loop
+        preload="none"
+        poster={asset("media/hero-poster.webp")}
+        aria-hidden="true"
+      ></video>
+    </div>
+    <div class="hero-copy">
+      <p class="kicker hero-kicker"><span class="waves" aria-hidden="true"><i></i><i></i><i></i></span> Consultoría acústica y telecomunicaciones · Desde 1997</p>
+      <h1>El ruido se proyecta. El silencio, también.</h1>
+      <p class="lede">
+        Acusttel lleva la ingeniería acústica al problema concreto de cada negocio. Más de 20 profesionales y más de 20 años estudiando la contaminación acústica para responder con una solución eficaz y definitiva.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={href("/solicitud-presupuesto/")}>Pedir presupuesto</a>
+        <a class="btn btn-ghost" href={href("/servicios/")}>Ver servicios</a>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <span>Gandia · Madrid · Murcia · Chile · Polonia</span>
+      <button class="hero-pause" type="button" data-hero-pause hidden>Pausar vídeo</button>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Datos de la compañía">
+    <div class="stat"><strong>1997</strong><span>Año de fundación en Gandia</span></div>
+    <div class="stat"><strong>+20</strong><span>Años de experiencia publicados</span></div>
+    <div class="stat"><strong>+20</strong><span>Profesionales de la ingeniería</span></div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Especialistas</p>
+          <h2>Soluciones acústicas para empresas</h2>
+        </div>
+        <p>Estudiamos la contaminación acústica y diseñamos proyectos a medida. El equipo se forma de manera continua para mantener la innovación y la calidad que cada encargo necesita.</p>
+      </div>
+      <div class="grid-4">
+        {services.map((s) => (
+          <a class="card" href={href(s.href)}>
+            <span class="num">{s.n}</span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+            <span class="more">Saber más</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <div class="wrap">
+      <blockquote>
+        «El silencio es tranquilidad, es concentración, descanso y respeto hacia los demás. El silencio crea mejores espacios habitables y lugares de trabajo más eficientes.»
+        <cite>Acusttel</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Organización</p>
+        <h2>Una respuesta para cada forma de ruido</h2>
+        <p>Tráfico, maquinaria, actividades calificadas. Por dentro, el trabajo se ordena en laboratorio de acústica y vibraciones, consultoría en edificación, en industria y en infraestructuras de transporte y medio ambiente. Si el caso es complejo, se monta un equipo entre divisiones.</p>
+        <p>El posicionamiento de Acusttel está en integrar esas unidades: el ensayo, la consultoría y la instalación, para que el cliente no tenga que coser tres contratos.</p>
+        <p class="actions"><a class="btn btn-primary dark" href={href("/empresa/")}>Conocer la empresa</a></p>
+      </div>
+      <img src={asset("media/ingenieria.webp")} width="1200" height="800" alt="Trabajo de ingeniería sobre documentación técnica" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Sectores</p>
+          <h2>Dónde se aplica el criterio</h2>
+        </div>
+        <a href={href("/sectores/")}>Ver todos los sectores</a>
+      </div>
+      <div class="grid-3">
+        {sectors.map((s) => (
+          <a class="media-card" href={href(s.href)}>
+            <img src={asset(`media/${s.image}`)} alt="" loading="lazy" />
+            <span>{s.title}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Trabajos recientes</p>
+          <h2>Una muestra de la obra hecha</h2>
+        </div>
+        <a href={href("/experiencias/")}>Ver todos los proyectos</a>
+      </div>
+      <div class="project-grid">
+        {featured.map((p) => (
+          <a class="project-card" href={href(`/projects/${p.slug}/`)}>
+            <img src={p.image ? asset(`media/${p.image}`) : asset("media/auditorio.webp")} alt="" loading="lazy" />
+            <div>
+              <h2>{p.title}</h2>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:white">
+    <div class="wrap split">
+      <img src={asset("media/obra.webp")} alt="" loading="lazy" />
+      <div>
+        <p class="eyebrow">Trayectoria</p>
+        <h2>Constructores, promotores, industria y administración</h2>
+        <p>En más de 20 años de actividad, Acusttel ha trabajado con grandes constructoras, con la promoción inmobiliaria, con la industria y la generación de energía, y con administraciones de infraestructuras, autonómicas y municipales.</p>
+        <p>El departamento de I+D+i gestiona proyectos internos y de cliente para aplicar tecnología actual de análisis de ruido.</p>
+        <p class="actions"><a class="btn btn-line" href={href("/empresa/idi/")}>I+D+I</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Actualidad</p>
+          <h2>Últimas noticias</h2>
+        </div>
+        <a href={href("/actualidad/")}>Ver más noticias</a>
+      </div>
+      <div class="grid-3">
+        {latest.map((n) => (
+          <a class="news-card" href={href(`/${n.slug}/`)}>
+            <p class="meta">{n.date}</p>
+            <h2>{n.title}</h2>
+            <p>{n.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">Clientes</p>
+      <h2>Algunos de los equipos con los que hemos trabajado</h2>
+      <p>Una selección de los logos publicados en la web actual. La relación incluye consultoría acústica e instalaciones.</p>
+      <ul class="logo-row">
+        {clients.map((c) => (
+          <li><img src={asset(`brand/clientes/${c.file}`)} alt={c.name} /></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap" style="display:grid;grid-template-columns:1.1fr .9fr;gap:1.2rem;align-items:start;">
+      <div class="cta">
+        <p class="eyebrow" style="color:#d5e4f7">Presupuesto</p>
+        <h2>El silencio es tranquilidad. Y tu tranquilidad es Acusttel.</h2>
+        <p>La trayectoria de la consultora está en la obra hecha y en el criterio con el que se encara cada encargo.</p>
+        <a class="btn btn-primary" href={href("/solicitud-presupuesto/")}>Pide presupuesto</a>
+      </div>
+      <div>
+        <h2>Déjanos tus datos</h2>
+        <LeadForm variant="mini" />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  @media (max-width: 800px) {
+    section.section :global(.wrap[style]) { display: block !important; }
+  }
+</style>

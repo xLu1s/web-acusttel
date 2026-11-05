@@ -1,0 +1,83 @@
+---
+import { asset, href } from "../lib/url";
+import { addressLines, email, nav, phoneDisplay, phoneTel, socials } from "../data/site";
+
+const empresa = nav[0];
+const sectores = nav[1];
+const servicios = nav[2];
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href={href("/")} aria-label="Acusttel, inicio">
+          <img src={asset("brand/acusttel.gif")} width="300" height="93" alt="Acusttel" style="width:150px;height:auto;background:#fff;border-radius:10px;padding:6px 8px;" />
+        </a>
+        <p>
+          {addressLines.map((line) => (
+            <>
+              {line}
+              <br />
+            </>
+          ))}
+          <a href={`tel:${phoneTel}`}>{phoneDisplay}</a><br />
+          <a href={`mailto:${email}`}>{email}</a>
+        </p>
+        <p class="socials">
+          {socials.map((s) => (
+            <a href={s.href} rel="noopener noreferrer">{s.label}</a>
+          ))}
+        </p>
+      </div>
+      <div>
+        <h2>{empresa.label}</h2>
+        <ul>
+          <li><a href={href(empresa.href)}>{empresa.label}</a></li>
+          {empresa.children?.map((c) => (
+            <li><a href={href(c.href)}>{c.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2>{sectores.label}</h2>
+        <ul>
+          <li><a href={href(sectores.href)}>{sectores.label}</a></li>
+          {sectores.children?.map((c) => (
+            <li><a href={href(c.href)}>{c.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2>{servicios.label}</h2>
+        <ul>
+          <li><a href={href(servicios.href)}>{servicios.label}</a></li>
+          {servicios.children?.map((c) => (
+            <li><a href={href(c.href)}>{c.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="cert-block">
+      <h2>Certificaciones</h2>
+      <img
+        src={asset("brand/certificaciones-acusttel-2024.png")}
+        width="320"
+        height="270"
+        alt="Sellos AW Certificación: ISO 9001 número 02299 e ISO 14001 número 02301. Certificadora acreditada por ENAC."
+      />
+    </div>
+
+    <div class="subfoot">
+      <span>© 2014–2026 Acusttel SL. Todos los derechos reservados.</span>
+      <span>
+        <a href={href("/ley-de-cookies/")}>Cookies</a>
+        {" · "}
+        <a href={href("/aviso-legal/")}>Legal</a>
+        {" · "}
+        <a href={href("/politica-de-privacidad/")}>Privacidad</a>
+      </span>
+    </div>
+  </div>
+</footer>
