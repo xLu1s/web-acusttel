@@ -1,0 +1,16 @@
+{
+  "name": "web-acusttel",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "@fontsource-variable/outfit": "^5.2.8",
+    "@fontsource-variable/source-sans-3": "^5.2.8",
+    "astro": "^5.15.9"
+  }
+}

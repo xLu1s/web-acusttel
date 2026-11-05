@@ -1,0 +1,17 @@
+---
+import Base from "../layouts/Base.astro";
+import { asset, href } from "../lib/url";
+---
+
+<Base title="Página no encontrada" description="La página que busca no está en esta demostración de Acusttel.">
+  <header class="page-hero">
+    <img src={asset("media/ciudad.webp")} alt="" />
+    <div class="shade"></div>
+    <div class="wrap">
+      <p class="eyebrow">404</p>
+      <h1>Esta página no está</h1>
+      <p class="lede">El contenido publicado de Acusttel sigue en el menú.</p>
+      <p><a class="btn btn-primary" href={href("/")}>Volver al inicio</a></p>
+    </div>
+  </header>
+</Base>

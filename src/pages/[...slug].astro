@@ -1,0 +1,219 @@
+---
+import Base from "../layouts/Base.astro";
+import Blocks from "../components/Blocks.astro";
+import LeadForm from "../components/LeadForm.astro";
+import Side from "../components/Side.astro";
+import { findPagina, paginas, type Block } from "../data/paginas";
+import { newsCategories, projectCategories } from "../data/site";
+import { asset, href } from "../lib/url";
+import noticias from "../data/noticias.json";
+import proyectos from "../data/proyectos.json";
+import legal from "../data/legal.json";
+
+export function getStaticPaths() {
+  const paths: { params: { slug: string } }[] = [];
+  for (const page of paginas) paths.push({ params: { slug: page.slug } });
+  for (const post of noticias) paths.push({ params: { slug: post.slug } });
+  for (const project of proyectos) paths.push({ params: { slug: `projects/${project.slug}` } });
+  for (const cat of newsCategories) paths.push({ params: { slug: `category/${cat.slug}` } });
+  for (const cat of projectCategories) paths.push({ params: { slug: `categoria_portfolio/${cat.slug}` } });
+  return paths;
+}
+
+const raw = Astro.params.slug;
+const slug = Array.isArray(raw) ? raw.join("/") : String(raw ?? "");
+
+const page = findPagina(slug);
+const post = noticias.find((item) => item.slug === slug);
+const projectSlug = slug.startsWith("projects/") ? slug.slice("projects/".length) : "";
+const project = proyectos.find((item) => item.slug === projectSlug);
+const newsCat = slug.startsWith("category/")
+  ? newsCategories.find((cat) => cat.slug === slug.slice("category/".length))
+  : undefined;
+const projectCat = slug.startsWith("categoria_portfolio/")
+  ? projectCategories.find((cat) => cat.slug === slug.slice("categoria_portfolio/".length))
+  : undefined;
+
+if (!page && !post && !project && !newsCat && !projectCat) {
+  throw new Error(`Ruta sin contenido: ${slug}`);
+}
+
+const imageByCat: Record<string, string> = {
+  edificacion: "auditorio.webp",
+  "estudios-urbanisticos-es": "ciudad.webp",
+  "industria-es": "industria.webp",
+  "infraestructuras-es": "tren.webp",
+  "instalaciones-audiovisuales-es": "estudio.webp",
+  "vibraciones-es": "carretera.webp",
+};
+
+function pictureFor(categories: string[], own?: string | null) {
+  if (own) return own;
+  for (const cat of categories) {
+    if (imageByCat[cat]) return imageByCat[cat];
+  }
+  return "obra.webp";
+}
+
+function formatDate(iso: string) {
+  if (!iso) return "";
+  return new Date(`${iso}T12:00:00`).toLocaleDateString("es-ES", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+const title = page?.title ?? post?.title ?? project?.title ?? newsCat?.label ?? projectCat?.label ?? "Acusttel";
+const description =
+  page?.description ??
+  post?.excerpt ??
+  project?.text?.slice(0, 160) ??
+  (newsCat ? `Noticias de Acusttel en la categoría ${newsCat.label}.` : `Proyectos de Acusttel: ${projectCat?.label}.`);
+const eyebrow = page?.eyebrow ?? (post ? "Actualidad" : project ? "Proyecto" : newsCat ? "Actualidad" : "Experiencias");
+const h1 = page?.h1 ?? post?.title ?? project?.title ?? newsCat?.label ?? projectCat?.label ?? "";
+const lede = page?.lede ?? (post ? formatDate(post.date) : project?.categoryLabels.join(" · "));
+const image = page?.image ?? (project ? pictureFor(project.categories, project.image) : newsCat || post ? "ciudad.webp" : "tren.webp");
+const imageAlt = page?.imageAlt ?? "";
+
+const crumbs = [{ label: "Inicio", href: "/" }];
+if (post) crumbs.push({ label: "Actualidad", href: "/actualidad/" });
+if (project) crumbs.push({ label: "Experiencias", href: "/experiencias/" });
+if (newsCat) crumbs.push({ label: "Actualidad", href: "/actualidad/" });
+if (projectCat) crumbs.push({ label: "Experiencias", href: "/experiencias/" });
+if (page && page.slug.includes("/")) {
+  const parent = page.slug.split("/")[0];
+  const parentPage = findPagina(parent);
+  if (parentPage) crumbs.push({ label: parentPage.title, href: `/${parent}/` });
+}
+crumbs.push({ label: page?.title ?? h1, href: `/${slug}/` });
+
+const legalBlocks = page?.kind === "legal" && page.legalKey ? (legal as Record<string, Block[]>)[page.legalKey] ?? [] : [];
+const filteredProjects = projectCat
+  ? proyectos.filter((item) => item.categories.includes(projectCat.slug))
+  : proyectos;
+const filteredNews = newsCat ? noticias.filter((item) => item.categories.includes(newsCat.slug)) : noticias;
+
+function newsLabel(categories: string[]) {
+  return categories
+    .map((cat) => newsCategories.find((item) => item.slug === cat)?.label ?? cat)
+    .join(" · ");
+}
+---
+
+<Base title={title} description={description} image={`media/${image}`}>
+  <header class="page-hero">
+    <img src={asset(`media/${image}`)} alt={imageAlt} />
+    <div class="shade"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Migas de pan">
+        {crumbs.map((crumb, index) => (
+          <>
+            {index > 0 && <span aria-hidden="true">/</span>}
+            {index < crumbs.length - 1 ? <a href={href(crumb.href)}>{crumb.label}</a> : <span>{crumb.label}</span>}
+          </>
+        ))}
+      </nav>
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{h1}</h1>
+      {lede && <p class="lede">{lede}</p>}
+    </div>
+  </header>
+
+  <div class="wrap article-layout">
+    <div>
+      {page?.kind === "page" && page.blocks && <Blocks blocks={page.blocks} />}
+
+      {page?.kind === "legal" && (
+        <article class="legal">
+          {legalBlocks.map((block) => {
+            if (block.t === "h2") return <h2>{block.text}</h2>;
+            if (block.t === "h3") return <h3>{block.text}</h3>;
+            if (block.t === "ul") return <ul>{block.items?.map((item) => <li>{item}</li>)}</ul>;
+            if (block.t === "p") return <p>{block.text}</p>;
+            return null;
+          })}
+        </article>
+      )}
+
+      {page?.kind === "contact" && <LeadForm variant="contact" />}
+      {page?.kind === "budget" && <LeadForm variant="budget" />}
+
+      {page?.kind === "empty-portfolio" && (
+        <div class="prose">
+          <p>No se encontraron elementos que coincidieran con esta selección en la web de origen.</p>
+          <p><a class="btn btn-primary dark" href={href("/experiencias/")}>Ir a experiencias</a></p>
+        </div>
+      )}
+
+      {(page?.kind === "news-index" || newsCat) && (
+        <>
+          <div class="filters">
+            <a class="chip" href={href("/actualidad/")} aria-current={!newsCat ? "page" : undefined}>Todas</a>
+            {newsCategories.map((cat) => (
+              <a class="chip" href={href(`/category/${cat.slug}/`)} aria-current={newsCat?.slug === cat.slug ? "page" : undefined}>{cat.label}</a>
+            ))}
+          </div>
+          <div class="news-list">
+            {filteredNews.map((item) => (
+              <a class="news-card" href={href(`/${item.slug}/`)}>
+                <p class="meta">{formatDate(item.date)} · {newsLabel(item.categories)}</p>
+                <h2>{item.title}</h2>
+                <p>{item.excerpt}</p>
+              </a>
+            ))}
+          </div>
+        </>
+      )}
+
+      {(page?.kind === "projects-index" || projectCat) && (
+        <>
+          {page?.kind === "projects-index" && (
+            <div class="filters" data-filters>
+              <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
+              {projectCategories.map((cat) => (
+                <button type="button" data-filter={cat.slug} aria-pressed="false">{cat.label}</button>
+              ))}
+            </div>
+          )}
+          {projectCat && <p><a href={href("/experiencias/")}>Ver la selección completa</a></p>}
+          <div class="project-grid">
+            {(projectCat ? filteredProjects : proyectos).map((item) => (
+              <a class="project-card" href={href(`/projects/${item.slug}/`)} data-cats={item.categories.join(" ") || "otros"} hidden={false}>
+                <img src={asset(`media/${pictureFor(item.categories, item.image)}`)} alt="" loading="lazy" />
+                <div>
+                  <p class="meta">{item.categoryLabels.join(" · ") || "Proyecto"}</p>
+                  <h2>{item.title}</h2>
+                </div>
+              </a>
+            ))}
+          </div>
+        </>
+      )}
+
+      {post && (
+        <article class="prose">
+          <p class="meta">{newsLabel(post.categories)}</p>
+          {post.blocks.map((block) => {
+            if ((block.tag === "h2" || block.tag === "h3") && block.text.length < 90) {
+              return block.tag === "h2" ? <h2>{block.text}</h2> : <h3>{block.text}</h3>;
+            }
+            if (block.tag === "li") return <ul><li>{block.text}</li></ul>;
+            return <p>{block.text}</p>;
+          })}
+        </article>
+      )}
+
+      {project && (
+        <article class="prose">
+          {project.categoryLabels.length > 0 && <p class="meta">{project.categoryLabels.join(" · ")}</p>}
+          {project.text ? <p>{project.text}</p> : <p>La ficha original no incluía una descripción más larga que el título.</p>}
+          {project.image && (
+            <img src={asset(`media/${project.image}`)} alt="Portada original del estudio de protección acústica del nuevo acceso ferroviario de Levante, abril de 2011." />
+          )}
+        </article>
+      )}
+    </div>
+    <Side />
+  </div>
+</Base>

@@ -1,0 +1,464 @@
+{
+  "ley-de-cookies": [
+    {
+      "t": "h2",
+      "text": "POLÍTICA DE COOKIES"
+    },
+    {
+      "t": "p",
+      "text": "DEFINICIÓN DE COOKIES"
+    },
+    {
+      "t": "p",
+      "text": "Las cookies son unos pequeños ficheros de texto que se descargan y almacenan en los dispositivos de los usuarios cuando acceden a páginas Web. Estos ficheros pueden almacenar datos sobre la navegación del usuario con objeto de personalizar la información que nos presentan las páginas Web. El uso de cookies es una técnica ampliamente utilizada en Internet para mejorar la prestación del servicio Web y ofrecer al usuario una mejor experiencia de navegación, así como para guardar y recuperar sus preferencias, recopilar información estadística sobre su navegación, sobre las páginas visitadas, la duración de la visita, etc."
+    },
+    {
+      "t": "p",
+      "text": "TIPOS DE COOKIES"
+    },
+    {
+      "t": "p",
+      "text": "Las cookies se pueden clasificar en varias categorías en función de sus características, pudiendo estar incluidas en una o varias de ellas."
+    },
+    {
+      "t": "p",
+      "text": "En función de su origen: Pueden ser “propias” o “de terceros”, dependiendo de la entidad que las gestione."
+    },
+    {
+      "t": "p",
+      "text": "En función de su duración: Pueden ser de “sesión” que expiran al cerrar el navegador, y se utilizan principalmente para mantener activa la sesión de un usuario, o “persistentes” que expiran al cumplir el objetivo para el que fueron diseñadas o cuando se borran manualmente."
+    },
+    {
+      "t": "p",
+      "text": "En función de su finalidad: Pueden ser:"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "“técnicas o necesarias” para permitir la utilización de diferentes servicios de la página Web. Si el usuario deshabilita este tipo de cookies a través de las preferencias de su navegador, no será posible continuar con la navegación."
+      ]
+    },
+    {
+      "t": "p",
+      "text": "“técnicas o necesarias” para permitir la utilización de diferentes servicios de la página Web. Si el usuario deshabilita este tipo de cookies a través de las preferencias de su navegador, no será posible continuar con la navegación."
+    },
+    {
+      "t": "ul",
+      "items": [
+        "“funcionales”, tanto de “personalización” para ofrecer servicios personalizados en función a unos criterios preestablecidos, como “analíticas”, aquellas que bien tratadas por nosotros o por terceros (fundamentalmente a través de Google Analitycs) permiten realizar un seguimiento del comportamiento de navegación de los usuarios con carácter estadístico y para la elaboración de perfiles de navegación, con el fin de introducir mejoras en función del análisis de los datos de uso sobre la oferta de productos y/o servicios. Si el usuario no acepta el uso de las cookies funcionales, este sitio Web seguirá funcionando aunque puede perder parte de su funcionalidad."
+      ]
+    },
+    {
+      "t": "p",
+      "text": "“funcionales”, tanto de “personalización” para ofrecer servicios personalizados en función a unos criterios preestablecidos, como “analíticas”, aquellas que bien tratadas por nosotros o por terceros (fundamentalmente a través de Google Analitycs) permiten realizar un seguimiento del comportamiento de navegación de los usuarios con carácter estadístico y para la elaboración de perfiles de navegación, con el fin de introducir mejoras en función del análisis de los datos de uso sobre la oferta de productos y/o servicios. Si el usuario no acepta el uso de las cookies funcionales, este sitio Web seguirá funcionando aunque puede perder parte de su funcionalidad."
+    },
+    {
+      "t": "ul",
+      "items": [
+        "“publicitarias” para mostrar publicidad en función de unos perfiles de usuario predeterminados, de “publicidad comportamental” similar a la anterior, pero teniendo en cuenta el comportamiento y los hábitos de navegación del usuario, etc. En general, son las cookies que permiten mostrar publicidad de forma personalizada al usuario, tanto dentro como fuera de nuestra página web a lo largo de su navegación."
+      ]
+    },
+    {
+      "t": "p",
+      "text": "“publicitarias” para mostrar publicidad en función de unos perfiles de usuario predeterminados, de “publicidad comportamental” similar a la anterior, pero teniendo en cuenta el comportamiento y los hábitos de navegación del usuario, etc. En general, son las cookies que permiten mostrar publicidad de forma personalizada al usuario, tanto dentro como fuera de nuestra página web a lo largo de su navegación."
+    },
+    {
+      "t": "p",
+      "text": "USO DE COOKIES"
+    },
+    {
+      "t": "p",
+      "text": "Al visitar nuestras páginas Web, recopilamos información estándar de Internet, así como detalles sobre patrones de comportamiento de los visitantes. Esta información no contiene en ningún caso datos de carácter personal, ni se asocia con otra información que permita identificar al usuario. En caso de ser necesaria información personal le sería solicitada de manera explícita."
+    },
+    {
+      "t": "p",
+      "text": "La utilización de nuestras páginas Web implica por su parte que presta su consentimiento expreso e inequívoco a la utilización de cookies, en los términos y condiciones previstos en esta Política de Cookies, sin perjuicio de las medidas de desactivación y eliminación de las cookies que pueda adoptar y que se mencionan en el apartado Control de Cookies."
+    },
+    {
+      "t": "p",
+      "text": "Es posible que la Política de Cookies de nuestro sitio Web pueda cambiar, por ello le recomendamos revisar periódicamente nuestra información sobre Política de Cookies para que pueda estar convenientemente informado."
+    },
+    {
+      "t": "p",
+      "text": "CONTROL DE COOKIES"
+    },
+    {
+      "t": "p",
+      "text": "Al navegar por nuestras páginas Web, el usuario puede enlazar con otros sitios Web donde tengamos presencia. Cuando el usuario selecciona esta opción será dirigido a dicho sitio Web, y una vez abandonadas nuestras páginas no podemos responsabilizarnos del uso de cookies que realicen dichos sitios Web ajenos a esta Entidad."
+    },
+    {
+      "t": "p",
+      "text": "Usted puede consultar, borrar, limitar el uso, desactivar la utilización de cookies, o recibir una advertencia en el momento que van a ser generadas, mediante el menú de su navegador. Los pasos para realizarlo son diferentes dependiendo del navegador utilizado, y puede consultarlos en el menú de ayuda del propio navegador."
+    },
+    {
+      "t": "p",
+      "text": "El usuario debe tener en cuenta que algunas características de los contenidos de las páginas web sólo están disponibles si se permite la instalación de cookies en su navegador. Si decide no aceptar o bloquear determinadas cookies , en función de su finalidad puede que esto afecte total o parcialmente al funcionamiento normal de la página, o que impida el acceso a algunos servicios de la misma."
+    }
+  ],
+  "aviso-legal": [
+    {
+      "t": "h2",
+      "text": "AVISO LEGAL"
+    },
+    {
+      "t": "p",
+      "text": "El presente Aviso Legal regula el acceso, navegación y uso del presente sitio web (en adelante, el “Sitio Web”)."
+    },
+    {
+      "t": "h3",
+      "text": "1.-DERECHO DE LA INFORMACIÓN"
+    },
+    {
+      "t": "p",
+      "text": "En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de Julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, le informamos que el Sitio Web es titularidad de ACÚSTICA Y TELECOMUNICACIONES S.L. (en adelante, el “TITULAR”) con CIF B96677315, con domicilio en Pol. Ind. Benieto C/ del Transporte 12, que se encuentra inscrita en el Registro Mercantil de Valencia, al tomo 5868, folio 122, sección 8, hoja V-55949, inscripción 1."
+    },
+    {
+      "t": "p",
+      "text": "Puede ponerse en contacto con la empresa titular del sitio web en la siguiente dirección de correo electrónico: info@acusttel.com"
+    },
+    {
+      "t": "h3",
+      "text": "2.- USUARIOS"
+    },
+    {
+      "t": "p",
+      "text": "El acceso y/o uso al Sitio Web le atribuye la condición de Usuario, y acepta, desde dicho acceso y/o uso, el presente Aviso Legal, así como todas y cada una de las condiciones y restricciones que estén publicadas en el Sitio Web en el momento en que acceda al mismo."
+    },
+    {
+      "t": "p",
+      "text": "El acceso al Sitio Web y/o la utilización de cualquiera de los servicios en él incluidos supondrá la aceptación de todas las condiciones de uso. El TITULAR se reserva el derecho a modificar unilateralmente el Sitio Web y los Contenidos en él ofrecidos, incluyendo la modificación de las condiciones de uso. En cuyo caso, avisará previamente al Usuario. Se recomienda al Usuario que lea este Aviso Legal tantas veces como acceda al Sitio Web."
+    },
+    {
+      "t": "h3",
+      "text": "3.- USO DEL SITIO WEB"
+    },
+    {
+      "t": "p",
+      "text": "El Sitio Web puede proporcionar acceso a multitud de textos, gráficos, dibujos, diseños, códigos, software, fotografías, música, vídeos, sonidos, bases de datos, imágenes, expresiones e informaciones (en adelante, “Contenidos”) pertenecientes al TITULAR o a terceros a los que el Usuario puede tener acceso."
+    },
+    {
+      "t": "p",
+      "text": "El Usuario asume la responsabilidad del uso del Sitio Web. Dicha responsabilidad se extiende al registro que, en su caso, sea necesario para acceder a los Contenidos que preste el Sitio Web."
+    },
+    {
+      "t": "p",
+      "text": "El Usuario se compromete a hacer un uso adecuado de los Contenidos ofrecidos a través del Sitio Web y con carácter enunciativo pero no limitativo, a no emplearlos para (i) incurrir en actividades ilícitas, ilegales o contrarias a la buena fe y al orden público; (ii) provocar daños en los sistemas físicos y lógicos del titular del Sitio Web, de sus proveedores o de terceras personas, (iii) introducir o difundir en la red virus informáticos o cualesquiera otros sistemas físicos o lógicos que sean susceptibles de provocar los daños anteriormente mencionados."
+    },
+    {
+      "t": "p",
+      "text": "El TITULAR tendrá derecho a investigar y denunciar cualquiera de las conductas mencionadas de acuerdo con la Ley, así como a colaborar con las autoridades en la investigación de dichas actuaciones."
+    },
+    {
+      "t": "h3",
+      "text": "4.- PROPIEDAD INTELECTUAL"
+    },
+    {
+      "t": "p",
+      "text": "Todos los derechos de propiedad intelectual del Contenido, diseño y código fuente de este Sitio Web son propiedad exclusiva de EL TITULAR, o bien de terceros que han autorizado a EL TITULAR para la utilización de los mismos en su Sitio Web, correspondiendo el ejercicio exclusivo de los derechos de explotación de los mismos."
+    },
+    {
+      "t": "p",
+      "text": "Por ello y en virtud de lo dispuesto en el Real Decreto Legislativo 1/1996, de 12 de Abril, por el que se aprueba el Texto Refundido de la Ley de Propiedad Intelectual, así como en la Ley 17/2001, de 7 de diciembre, de Marcas y la legislación complementaria en materia de propiedad intelectual e industrial, queda prohibida la reproducción, transmisión, adaptación, traducción, distribución, comunicación pública, incluida su modalidad de puesta a disposición, o cualquier otra explotación y/o modificación, de la totalidad o parte de los contenidos del Sitio Web, sin previa autorización expresa de EL TITULAR."
+    },
+    {
+      "t": "p",
+      "text": "El TITULAR no concede ninguna licencia o autorización de uso de ninguna clase sobre sus derechos de propiedad intelectual e industrial o sobre cualquier otra propiedad o derecho relacionado con el Sitio Web, y en ningún caso se entenderá que el acceso y navegación del Usuario implica una renuncia, transmisión, licencia o cesión total ni parcial de dichos derechos por parte del TITULAR."
+    },
+    {
+      "t": "p",
+      "text": "Cualquier uso de esos contenidos no autorizado previamente por parte del TITULAR será considerado un incumplimiento grave de los derechos de propiedad intelectual o industrial y dará lugar a las responsabilidades legalmente establecidas."
+    },
+    {
+      "t": "h3",
+      "text": "5.- RESPONSABILIDAD Y GARANTÍAS"
+    },
+    {
+      "t": "p",
+      "text": "El TITULAR declara que ha adoptado las medidas necesarias que, dentro de sus posibilidades y el estado de la tecnología, permitan el correcto funcionamiento de su Sitio Web así como la ausencia de virus y componentes dañinos. Sin embargo, el TITULAR no puede hacerse responsable de: (a) la continuidad y disponibilidad de los Contenidos; (b) la ausencia de errores en dichos Contenidos ni la corrección de cualquier defecto que pudiera ocurrir; (c) la ausencia de virus y/o demás componentes dañinos; (d) los daños o perjuicios que cause cualquier persona que vulnere los sistemas de seguridad del TITULAR."
+    },
+    {
+      "t": "p",
+      "text": "El TITULAR podrá suspender temporalmente y sin previo aviso, la accesibilidad al Sitio Web con motivo de operaciones de mantenimiento, reparación, actualización o mejora. No obstante, siempre que las circunstancias lo permitan, el TITULAR comunicará al Usuario, con antelación suficiente, la fecha prevista para la suspensión del acceso al Sitio web."
+    },
+    {
+      "t": "p",
+      "text": "El TITULAR no puede garantizar la idoneidad de los Contenidos incluidos en el Sitio Web para fines particulares de quien acceda a la misma. En consecuencia, tanto el acceso a dicho Sitio Web como el uso que pueda hacerse de la información y Contenidos incluidos en el mismo se efectúa bajo la exclusiva responsabilidad del Usuario, por lo que el TITULAR no responderá en ningún caso por los eventuales perjuicios derivados del mal uso de la información y Contenidos accesibles en el Sitio Web."
+    },
+    {
+      "t": "p",
+      "text": "El TITULAR no se responsabiliza del uso que los Usuarios puedan hacer de los Contenidos incluidos en el Sitio Web. En consecuencia, el TITULAR no garantiza que el uso que los Usuarios puedan hacer de los contenidos que en su caso se incluyan en el Sitio Web, se ajusten al presente Aviso Legal, ni que lo hagan de forma diligente."
+    },
+    {
+      "t": "p",
+      "text": "El Sitio Web puede contener hipervínculos que permitan al Usuario acceder a páginas Web de terceros. El TITULAR no asume ninguna responsabilidad por el contenido o informaciones que pudieran aparecer en dichos sitios, que se entenderán ofrecidos exclusivamente con carácter informativo por parte del TITULAR, y que en ningún caso implican aceptación o respaldo alguno entre el TITULAR y las personas o entidades titulares de tales contenidos o titulares de los sitios donde se encuentren. En consecuencia, el Usuario accede bajo su exclusiva responsabilidad a los referidos sitios web."
+    },
+    {
+      "t": "h3",
+      "text": "6.- DURACIÓN Y MODIFICACIÓN"
+    },
+    {
+      "t": "p",
+      "text": "Las condiciones del presente Aviso Legal estarán vigentes hasta que sean modificadas, pudiendo el TITULAR efectuar estos cambios que serán comunicados al Usuario."
+    },
+    {
+      "t": "p",
+      "text": "El TITULAR podrá suprimir, añadir o cambiar los Contenidos que ofrece a través del Sitio Web, así como también la forma en la que los mismos aparezcan localizados o presentados. Se entienden como vigentes, las condiciones que estén publicadas en el momento en el que el Usuario acceda al Sitio Web del TITULAR."
+    },
+    {
+      "t": "p",
+      "text": "El acceso y/o el uso del Sitio Web se entenderán como una aceptación por parte del Usuario de las condiciones del presente Aviso Legal y, en su caso, los cambios efectuados en las mismas."
+    }
+  ],
+  "politica-de-privacidad": [
+    {
+      "t": "h2",
+      "text": "POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS"
+    },
+    {
+      "t": "h3",
+      "text": "1.– ¿Quién es el responsable del tratamiento de sus datos?"
+    },
+    {
+      "t": "p",
+      "text": "El responsable del tratamiento de sus datos personales es ACÚSTICA Y TELECOMUNICACIONES S.L., (en adelante, “ LA EMPRESA ”), con CIF.B96677315, y domicilio social en Pol. Ind. Benieto C/ del Transporte 12."
+    },
+    {
+      "t": "p",
+      "text": "Le informamos que la titularidad del dominio de nuestra web www.acusttel.com (en adelante el “Sitio Web”), es de LA EMPRESA."
+    },
+    {
+      "t": "p",
+      "text": "El acceso y/o uso al Sitio Web le atribuye la condición de Usuario (en adelante, el “Usuario”), e implica la aceptación, desde dicho acceso y/o uso, de la presente Política de Privacidad."
+    },
+    {
+      "t": "p",
+      "text": "El Usuario podrá contactar con LA EMPRESA en la siguiente dirección de correo electrónico: info@acusttel.com"
+    },
+    {
+      "t": "h3",
+      "text": "2.– ¿Por qué LA EMPRESA está legitimado para llevar a cabo el tratamiento de datos?"
+    },
+    {
+      "t": "p",
+      "text": "LA EMPRESA está legitimado para tratar sus datos para poder llevar a cabo la prestación de sus servicios."
+    },
+    {
+      "t": "p",
+      "text": "LA EMPRESA se toma muy en serio la protección de su privacidad y de sus datos personales. Por lo tanto, su información personal se conserva de forma segura y se trata con el máximo cuidado."
+    },
+    {
+      "t": "p",
+      "text": "La presente Política de Privacidad regula el acceso y el uso al servicio (en adelante, el “Servicio”) que LA EMPRESA pone a disposición del Usuario interesado en los servicios y Contenidos alojados en el Sitio Web."
+    },
+    {
+      "t": "p",
+      "text": "De conformidad con lo establecido en la normativa de protección de datos aplicable, así como, en su caso, en la normativa de desarrollo, LA EMPRESA, titular de este Sitio Web, informa al Usuario de la existencia de un fichero automatizado de datos de carácter personal, debidamente inscrito en el Registro General de la Agencia Española de Protección de Datos, creado por LA EMPRESA bajo su responsabilidad."
+    },
+    {
+      "t": "h3",
+      "text": "3.-¿Cuáles son las finalidades del tratamiento de sus datos de carácter personal por parte de LA EMPRESA?"
+    },
+    {
+      "t": "p",
+      "text": "Sus datos de carácter personal recabados por LA EMPRESA podrán ser utilizados para las siguientes finalidades:"
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Enviar información detallada sobre los congresos y eventos que LA EMPRESA organice."
+      ]
+    },
+    {
+      "t": "p",
+      "text": "Enviar información detallada sobre los congresos y eventos que LA EMPRESA organice."
+    },
+    {
+      "t": "ul",
+      "items": [
+        "Enviar comunicaciones comerciales y Newsletters de LA EMPRESA sobre sus servicios mediante carta, teléfono, correo electrónico, SMS/MMS, o por otros medios de comunicación electrónica equivalentes siempre y cuando el Usuario haya consentido el tratamiento de sus datos personales con esta finalidad."
+      ]
+    },
+    {
+      "t": "p",
+      "text": "Enviar comunicaciones comerciales y Newsletters de LA EMPRESA sobre sus servicios mediante carta, teléfono, correo electrónico, SMS/MMS, o por otros medios de comunicación electrónica equivalentes siempre y cuando el Usuario haya consentido el tratamiento de sus datos personales con esta finalidad."
+    },
+    {
+      "t": "p",
+      "text": "Asimismo, el Usuario consiente el tratamiento de sus datos para la elaboración de perfiles, así como para la segmentación de sus datos. Los citados tratamientos pueden tener como finalidad tanto el análisis y realización de estadísticas para conocer el tráfico y utilización del Sitio Web por parte de los Usuarios, como la determinación de sus gustos y preferencias para remitirle información promocional acorde con sus intereses."
+    },
+    {
+      "t": "p",
+      "text": "LA EMPRESA podrá tratar sus datos, siempre y cuando haya aceptado este tratamiento de datos personales para enviarle por carta, teléfono, correo electrónico, SMS/MMS, o por otros medios de comunicación electrónica equivalentes, comunicaciones comerciales o información de empresas relacionadas con los con los siguientes sectores:"
+    },
+    {
+      "t": "p",
+      "text": "Servicios de ingeniería, laboratorio y consultoría, suministro e instalación de sistemas de protección acústica y vibratoria."
+    },
+    {
+      "t": "p",
+      "text": "Sus datos podrán ser cedidos a empresas patrocinadoras de los eventos organizados por LA EMPRESA."
+    },
+    {
+      "t": "p",
+      "text": "La finalidad de la cesión será el envío, por carta, teléfono, correo electrónico, SMS/MMS, o por otros medios de comunicación electrónica equivalentes por parte de estas empresas de información y comunicaciones comerciales que puedan resultar de su interés."
+    },
+    {
+      "t": "p",
+      "text": "No obstante, el Usuario podrá revocar el consentimiento, en cada comunicado comercial o publicitario que se le haga llegar, y en cualquier momento, mediante notificación en la siguiente dirección de correo electrónico info@acusttel.com mediante carta dirigida a ACUSTICA Y TELECOMUNICACIONES S.L. con domicilio en Pol. Ind. Benieto C/ del Transporte 12."
+    },
+    {
+      "t": "h3",
+      "text": "4.- Veracidad de los datos facilitados por los Usuarios"
+    },
+    {
+      "t": "p",
+      "text": "El Usuario garantiza que los datos personales facilitados son veraces y se hace responsable de comunicar a LA EMPRESA cualquier modificación de los mismos. El Usuario responderá, en cualquier caso, de la veracidad de los datos facilitados, reservándose LA EMPRESA el derecho a excluir de los Servicios registrados a todo Usuario que haya facilitado datos falsos, sin perjuicio de las demás acciones que procedan en Derecho."
+    },
+    {
+      "t": "h3",
+      "text": "5.-Conservación de los datos"
+    },
+    {
+      "t": "p",
+      "text": "Los datos personales proporcionados se conservarán por parte de LA EMPRESA mientras el Usuario no manifieste su voluntad de darse de baja de los servicios de LA EMPRESA, y ello con la finalidad de recibir información sobre productos de la empresa."
+    },
+    {
+      "t": "h3",
+      "text": "6.- Derechos del Usuario en relación con sus datos"
+    },
+    {
+      "t": "p",
+      "text": "El Usuario tiene derecho a (i) acceder a sus datos personales, así como a (ii) solicitar la rectificación de los datos inexactos o, en su caso, solicitar su (iii) supresión, (iv) solicitar la limitación del tratamiento de sus datos, (v) oponerse al tratamiento de sus datos y (vi) solicitar su portabilidad. Además, el Usuario podrá ejercer su (vii) derecho al olvido."
+    },
+    {
+      "t": "p",
+      "text": "El Usuario puede ejercer todos estos derechos en la siguiente dirección de info@acusttel.com , indicando el motivo de su petición y aportando una copia de su D.N.I."
+    },
+    {
+      "t": "p",
+      "text": "El Usuario puede también enviar su petición por correo ordinario a la siguiente dirección:"
+    },
+    {
+      "t": "p",
+      "text": "ACUSTICA Y TELECOMUNICACIONES S.L."
+    },
+    {
+      "t": "p",
+      "text": "Pol. Ind. Benieto C/ del Transporte 12"
+    },
+    {
+      "t": "p",
+      "text": "46702 Gandia. Valencia"
+    },
+    {
+      "t": "p",
+      "text": "Sin perjuicio de cualquier otro recurso administrativo o acción judicial, el Usuario tendrá derecho a presentar una reclamación ante una Autoridad de Control, en particular en el Estado miembro en el que tenga su residencia habitual, lugar de trabajo o lugar de la supuesta infracción, en caso de que considere que el tratamiento de sus datos personales no es adecuado a la normativa, así como en el caso de no ver satisfecho el ejercicio de sus derechos. La autoridad de control ante la que se haya presentado la reclamación informará al reclamante sobre el curso y el resultado de la reclamación."
+    },
+    {
+      "t": "h3",
+      "text": "7.- Seguridad de los datos"
+    },
+    {
+      "t": "p",
+      "text": "La protección de la privacidad y los datos personales de los Usuarios es muy importante para LA EMPRESA. Por lo tanto, LA EMPRESA hace todo lo que está en su mano para impedir que sus datos se utilicen de forma inadecuada, permitiendo el acceso a los mismo únicamente a personal autorizado."
+    },
+    {
+      "t": "p",
+      "text": "LA EMPRESA mantiene los niveles de seguridad de protección de datos personales conforme a la normativa aplicable y ha establecido todos los medios técnicos a su alcance para evitar la pérdida, mal uso, alteración, acceso no autorizado y robo de los datos que el Usuario facilite a través del Sitio Web, sin perjuicio de informarle de que las medidas de seguridad en Internet no son inexpugnables."
+    },
+    {
+      "t": "p",
+      "text": "LA EMPRESA se compromete a cumplir con el deber de secreto y confidencialidad respecto de los datos personales de acuerdo con la legislación aplicable, así como a conferirles un tratamiento seguro en las cesiones y transferencias internacionales de datos que, en su caso, puedan producirse."
+    },
+    {
+      "t": "p",
+      "text": "En aquellos servicios de la web que precisen registrarse como Usuario, se deberá elegir una contraseña. El Usuario es el responsable de mantener la confidencialidad de esta contraseña, así como de todas las actividades que ocurran en la sesión iniciada con su nombre y contraseña. El Usuario se compromete a notificar a LA EMPRESA a la mayor brevedad el uso no autorizado de su nombre de Usuario y/o contraseña o cualquier otro fallo en la seguridad. LA EMPRESA no será responsable por los daños o pérdidas que se pudieran originar debido al no cumplimiento de esta obligación por parte del Usuario."
+    },
+    {
+      "t": "h3",
+      "text": "8.-Cambios"
+    },
+    {
+      "t": "p",
+      "text": "LA EMPRESA se reserva el derecho de revisar su Política de Privacidad en el momento que considere oportuno. Por esta razón, le rogamos que compruebe de forma regular esta Política de Privacidad para leer la versión más reciente de la misma. No obstante, cualquier cambio que se produzca en la presente Política de Privacidad se comunicará al Usuario."
+    },
+    {
+      "t": "h3",
+      "text": "9.- Links a páginas web"
+    },
+    {
+      "t": "p",
+      "text": "El Sitio Web de LA EMPRESA podría contener links a páginas web de compañías y entidades de terceros."
+    },
+    {
+      "t": "p",
+      "text": "LA EMPRESA no puede hacerse responsable de la forma en la que estas compañías tratan la protección de la privacidad y de los datos personales, por lo que le aconsejamos que lea detenidamente las declaraciones de Política de Privacidad de estas páginas web que no son propiedad de LA EMPRESA con relación al uso, procesamiento y protección de datos personales. Las condiciones que ofrecen estas páginas web pueden no ser las mismas que las que ofrece LA EMPRESA."
+    },
+    {
+      "t": "h3",
+      "text": "10.- Preguntas"
+    },
+    {
+      "t": "p",
+      "text": "Si tienen alguna pregunta sobre esta Política de Privacidad o el tratamiento de sus datos rogamos que se ponga en contacto con LA EMPRESA mediante correo electrónico dirigido a la siguiente dirección de correo electrónico: info@acusttel.com"
+    },
+    {
+      "t": "h3",
+      "text": "11.- Aceptación y Consentimiento"
+    },
+    {
+      "t": "p",
+      "text": "El Usuario declara haber sido informado de las condiciones sobre protección de datos personales, aceptando y consintiendo el tratamiento de los mismos por parte de LA EMPRESA, en la forma y para las finalidades indicadas en la presente Política de Privacidad."
+    }
+  ],
+  "politica-de-gestion-acusttel": [
+    {
+      "t": "h2",
+      "text": "Política de gestión de la Calidad y del Medioambiente"
+    },
+    {
+      "t": "p",
+      "text": "Es en la consideración primaria y objetiva de que Acusttel es una organización dedicada a la acústica y las telecomunicaciones . La dirección, convencida de la importancia de proteger la calidad de vida, colaborando con cualquier organización interesada en la determinación tanto del grado de contaminación como el de protección acústica, establece en su carta adjunta aquellos principios y actuaciones que deben regir todas sus actividades, teniendo presente siempre la finalidad última de Acusttel que es su subsistencia en el mercado ofreciendo unos servicios veraces con una asistencia objetiva y total al cliente."
+    },
+    {
+      "t": "p",
+      "text": "Son factores esenciales aquellos que relacionan de forma objetiva y real el servicio que se suministra con el nicho de mercado al que va dirigido, para ello se enfatiza en aquellos principios que se consideran van a repercutir favorablemente en la subsistencia de Acusttel ."
+    },
+    {
+      "t": "p",
+      "text": "Ante los nuevos retos en que nos vemos inmersos debido a la evolución natural del mercado y con el objetivo primordial de poder garantizar nuestra propia subsistencia, es necesario establecer unos criterios de actuación unánimes y diferenciados de tal forma que los esfuerzos individuales no se vean mermados ya sea por falta de directrices claras o interpretaciones erróneas de los caminos a seguir para alcanzar los objetivos empresariales establecidos."
+    },
+    {
+      "t": "p",
+      "text": "Es condición primordial que tengamos en todas nuestras actividades la perspectiva de que éstas deben estar basadas siempre en que Acusttel es una organización por una parte basada en el cumplimiento de los requisitos legales y reglamentarios, y por otra parte orientada al cliente, comprendiendo sus necesidades y expectativas de tal forma que consigamos un equilibrio entre el cliente y el resto de partes afectadas."
+    },
+    {
+      "t": "p",
+      "text": "Nuestra concepción global de cliente nos lleva a considerar cliente al entorno en el que nos movemos, es imprescindible para unificar estos criterios la existencia de personas que coordinen las actividades de la organización mediante la concepción del liderazgo para crear y mantener el ambiente interno que involucre a todo el personal en la consecución de los objetivos, promoviendo la participación del personal en la búsqueda activa de oportunidades para aumentar sus competencias, conocimientos y experiencias, a la vez de poder compartir libremente estos conocimientos y experiencias."
+    },
+    {
+      "t": "p",
+      "text": "La única forma que consideramos válida para conseguir nuestra subsistencia, con el liderazgo como principal objetivo, es la estandarización y disciplina en nuestro trabajo, lo que nos lleva a la implantación de un modelo de gestión con sus adaptaciones consideradas en las normas de referencia UNE-EN ISO 9001 , UNE-EN ISO 14001 y UNE-EN ISO/IEC 17025 ."
+    },
+    {
+      "t": "p",
+      "text": "Como colofón a “nuestra forma de trabajar”, es básico el reconocimiento por parte de las entidades de acreditación y certificación, objetivo este que consideramos capital para la subsistencia de la empresa."
+    },
+    {
+      "t": "p",
+      "text": "Por todo lo establecido anteriormente, la dirección se compromete a aportar los medios necesarios para el correcto funcionamiento y desarrollo de la organización así como espera el apoyo y colaboración de todo el personal, para alcanzar las nuevas metas que nos hemos propuesto."
+    },
+    {
+      "t": "p",
+      "text": "La Política de gestión aquí desarrollada, no pretende ser un marco institucional inamovible y rígido, sino que es una referencia que deberá ir evolucionando y conformándose a las exigencias y nuevas estrategias encontradas durante su aplicación."
+    },
+    {
+      "t": "p",
+      "text": "Firmado:"
+    },
+    {
+      "t": "p",
+      "text": "Antonio Piñera Lucas Iñaki Miralles Martínez Juan Luís Aguilera de Maya"
+    }
+  ]
+}
