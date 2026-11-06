@@ -30,10 +30,6 @@ function isCurrent(path: string) {
     <a class="logo" href={href("/")} aria-label="Acusttel, inicio">
       <img src={asset("brand/acusttel.gif")} width="300" height="93" alt="Acusttel" />
     </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" data-nav-toggle>
-      <span></span>
-      <span class="sr">Abrir menú</span>
-    </button>
     <nav class="site-nav" id="menu-principal" aria-label="Menú principal" data-nav>
       <ul>
         {nav.map((item) => (
@@ -88,6 +84,13 @@ function isCurrent(path: string) {
         ))}
       </ul>
     </nav>
+    <div class="header-tools">
+      <a class="header-call" href={`tel:${phoneTel}`} aria-label={`Habla con un técnico, ${phoneDisplay}`}>Llamar</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" data-nav-toggle>
+        <span></span>
+        <span class="sr">Abrir menú</span>
+      </button>
+    </div>
   </div>
 </header>
 

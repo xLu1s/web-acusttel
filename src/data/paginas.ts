@@ -1,5 +1,8 @@
+import { serviceGroups } from "./site";
+
 export type Block =
   | { t: "p"; text: string }
+  | { t: "kicker"; text: string }
   | { t: "h2"; text: string }
   | { t: "h3"; text: string }
   | { t: "ul"; items: string[] }
@@ -482,39 +485,22 @@ export const paginas: PageDoc[] = [
         t: "p",
         text: "La estructura por divisiones permite tanto una certificación pequeña como un proyecto de infraestructura de transporte, industria, generación de energía, tratamiento de aguas o planificación estratégica de ruido para una administración.",
       },
+      ...serviceGroups.flatMap((group) => [
+        { t: "kicker" as const, text: group.label },
+        { t: "cards" as const, items: group.items },
+      ]),
       {
-        t: "cards",
+        t: "h2",
+        text: "Según el sector",
+      },
+      {
+        t: "links",
         items: [
-          {
-            title: "Certificaciones y ensayos",
-            text: "La división de laboratorio está acreditada por ENAC y es entidad colaboradora de administraciones autonómicas en ruido y vibraciones. Trabaja en transporte, actividades, industria y aglomeraciones urbanas.",
-            href: "/servicios/laboratorio-ensayos/",
-          },
-          {
-            title: "Consultoría acústica",
-            text: "Diseño de soluciones con método propio, herramientas de última generación y un equipo que lleva años en el oficio.",
-            href: "/servicios/consultoria/",
-          },
-          {
-            title: "Cámaras acústicas",
-            text: "Cámaras de ensayo acreditadas por ENAC para conocer las prestaciones acústicas de productos y sistemas constructivos.",
-            href: "/servicios/laboratorio-ensayos/laboratorio-fijo-camaras-acusticas/",
-          },
-          {
-            title: "Fabricantes",
-            text: "Desarrollo, certificación y optimización de elementos constructivos y de maquinaria.",
-            href: "/servicios/desarrollo-de-productos/fabricantes/",
-          },
-          {
-            title: "Instalaciones",
-            text: "Aislamiento, insonorización, tratamientos y pantallas acústicas, de la idea a la obra.",
-            href: "/servicios/instalaciones-acusticas/",
-          },
-          {
-            title: "Telecomunicaciones",
-            text: "ICT, domótica, legalización de instalaciones y eficiencia energética en la edificación.",
-            href: "/servicios/consultoria/consultoria-telecomunicaciones/",
-          },
+          { label: "Industria", href: "/sectores/industria/" },
+          { label: "Desarrollo inmobiliario", href: "/sectores/desarrollo-inmobiliario/" },
+          { label: "Actividades calificadas", href: "/sectores/actividades-calificadas/" },
+          { label: "Instalaciones audiovisuales", href: "/sectores/instalaciones-audiovisuales/" },
+          { label: "Infraestructuras", href: "/sectores/infraestructuras/" },
         ],
       },
     ],
@@ -880,7 +866,7 @@ export const paginas: PageDoc[] = [
       "Proyectos de Acusttel en edificación, estudios urbanísticos, industria, infraestructuras, audiovisual y vibraciones.",
     eyebrow: "Experiencias",
     h1: "Trabajos que sostienen la trayectoria",
-    lede: "Auditorios, mapas, trazados ferroviarios y viarios. La selección publica los proyectos que aparecen en la web, con el cliente, la fecha y la descripción que allí figuran.",
+    lede: "Auditorios, mapas, trazados ferroviarios y viarios. En cada ficha aparecen el cliente, la fecha y el encargo cuando el proyecto original los recoge.",
     image: "auditorio.webp",
     imageAlt: "Sala de gran formato con público y pantalla",
   },

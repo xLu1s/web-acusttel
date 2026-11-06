@@ -98,6 +98,71 @@ export const clients = [
   { name: "Vialobra", file: "vialobra.jpg" },
 ];
 
+export interface ServiceCard {
+  title: string;
+  text: string;
+  href: string;
+}
+
+export interface ServiceGroup {
+  label: string;
+  items: ServiceCard[];
+}
+
+/** Misma taxonomía en la portada y en Servicios. */
+export const serviceGroups: ServiceGroup[] = [
+  {
+    label: "Medir y certificar",
+    items: [
+      {
+        title: "Certificaciones y ensayos",
+        text: "La división de laboratorio está acreditada por ENAC y colabora con administraciones autonómicas en ruido y vibraciones. Trabaja en transporte, actividades, industria y aglomeraciones urbanas.",
+        href: "/servicios/laboratorio-ensayos/",
+      },
+      {
+        title: "Cámaras acústicas",
+        text: "Cámaras de ensayo acreditadas por ENAC para conocer las prestaciones acústicas de productos y sistemas constructivos.",
+        href: "/servicios/laboratorio-ensayos/laboratorio-fijo-camaras-acusticas/",
+      },
+    ],
+  },
+  {
+    label: "Proyectar",
+    items: [
+      {
+        title: "Consultoría acústica",
+        text: "Diseño de soluciones con método propio, herramientas de última generación y un equipo que lleva años en el oficio.",
+        href: "/servicios/consultoria/consultoria-acustica/",
+      },
+      {
+        title: "Telecomunicaciones",
+        text: "ICT, domótica, legalización de instalaciones y eficiencia energética en la edificación.",
+        href: "/servicios/consultoria/consultoria-telecomunicaciones/",
+      },
+      {
+        title: "Acústica subacuática",
+        text: "Medición, modelización y mitigación del ruido de la actividad humana en el mar, en obra portuaria y en actividad offshore.",
+        href: "/servicios/acustica-subacuatica/",
+      },
+    ],
+  },
+  {
+    label: "Ejecutar",
+    items: [
+      {
+        title: "Instalaciones acústicas",
+        text: "Aislamiento, insonorización, tratamientos y pantallas acústicas, de la idea a la obra.",
+        href: "/servicios/instalaciones-acusticas/",
+      },
+      {
+        title: "Fabricantes",
+        text: "Desarrollo, certificación y optimización de elementos constructivos y de maquinaria.",
+        href: "/servicios/desarrollo-de-productos/fabricantes/",
+      },
+    ],
+  },
+];
+
 export interface Office {
   group: string;
   name: string;

@@ -14,5 +14,8 @@ import { addressLines, email, phoneDisplay, phoneTel } from "../data/site";
       </>
     ))}
   </p>
-  <p><a class="btn btn-primary dark" href={href("/solicitud-presupuesto/")}>Pedir presupuesto</a></p>
+  <p class="actions">
+    <a class="btn btn-primary dark" href={href("/solicitud-presupuesto/")}>Pedir presupuesto</a>
+    <a class="btn btn-line" href={`tel:${phoneTel}`}>Habla con un técnico</a>
+  </p>
 </aside>
