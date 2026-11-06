@@ -2,36 +2,9 @@
 import Base from "../layouts/Base.astro";
 import LeadForm from "../components/LeadForm.astro";
 import { asset, href } from "../lib/url";
-import { clients } from "../data/site";
+import { clients, phoneTel, serviceGroups } from "../data/site";
 import noticias from "../data/noticias.json";
 import proyectos from "../data/proyectos.json";
-
-const services = [
-  {
-    n: "01",
-    title: "Consultoría acústica",
-    text: "Procesos, tecnología y experiencia para decidir la solución por eficacia, coste y garantía de resultado.",
-    href: "/servicios/consultoria/",
-  },
-  {
-    n: "02",
-    title: "Laboratorio de ensayos",
-    text: "Evaluación de actividades, focos y edificios para contrastar el cumplimiento de la legislación de ruido. Sonox certifica in situ.",
-    href: "/servicios/laboratorio-ensayos/",
-  },
-  {
-    n: "03",
-    title: "Instalaciones acústicas",
-    text: "Del diseño a la ejecución: insonorización, acondicionamiento, tratamientos y pantallas, con garantía de resultados.",
-    href: "/servicios/instalaciones-acusticas/",
-  },
-  {
-    n: "04",
-    title: "Desarrollo de productos",
-    text: "Desarrollo, optimización y certificación de elementos constructivos y de maquinaria, en acústica y en telecomunicación.",
-    href: "/servicios/desarrollo-de-productos/",
-  },
-];
 
 const sectors = [
   { title: "Industria", href: "/sectores/industria/", image: "industria.webp" },
@@ -53,7 +26,7 @@ const featured = featuredSlugs
 const latest = noticias.slice(0, 3);
 
 const description =
-  "Consultoría acústica y de telecomunicaciones en Gandia. Más de 20 profesionales de la ingeniería y más de 20 años midiendo, proyectando e instalando soluciones de ruido y vibraciones.";
+  "Medimos, diseñamos y ejecutamos soluciones de ruido y vibraciones para industria, edificación e infraestructuras. Consultoría acústica y de telecomunicaciones en Gandia.";
 ---
 
 <Base title="Acusttel" description={description} overlay>
@@ -75,16 +48,38 @@ const description =
       <p class="kicker hero-kicker"><span class="waves" aria-hidden="true"><i></i><i></i><i></i></span> Consultoría acústica y telecomunicaciones · Desde 1997</p>
       <h1>El ruido se proyecta. El silencio, también.</h1>
       <p class="lede">
-        Acusttel lleva la ingeniería acústica al problema concreto de cada negocio. Más de 20 profesionales y más de 20 años estudiando la contaminación acústica para responder con una solución eficaz y definitiva.
+        Medimos, diseñamos y ejecutamos el tratamiento del ruido y las vibraciones para industria, edificación e infraestructuras.
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href={href("/solicitud-presupuesto/")}>Pedir presupuesto</a>
+        <a class="btn btn-ghost" href={`tel:${phoneTel}`}>Habla con un técnico</a>
         <a class="btn btn-ghost" href={href("/servicios/")}>Ver servicios</a>
       </div>
     </div>
     <div class="hero-foot">
       <span>Gandia · Madrid · Murcia · Chile · Polonia</span>
       <button class="hero-pause" type="button" data-hero-pause hidden>Pausar vídeo</button>
+    </div>
+  </section>
+
+  <section class="trust" id="acreditaciones" aria-label="Acreditaciones y clientes">
+    <div class="wrap trust-grid">
+      <div>
+        <h2>Acreditaciones</h2>
+        <div class="seal-row">
+          <img src={asset("brand/iso-9001.webp")} width="610" height="1066" alt="Sello AW Certificación ISO 9001, certificado 02299, certificadora acreditada por ENAC." />
+          <img src={asset("brand/iso-14001.webp")} width="610" height="1066" alt="Sello AW Certificación ISO 14001, certificado 02301, certificadora acreditada por ENAC." />
+        </div>
+        <p>Laboratorio de acústica acreditado por ENAC. Gestión certificada en ISO 9001 e ISO 14001.</p>
+      </div>
+      <div>
+        <h2>Clientes</h2>
+        <ul class="logo-row trust-logos">
+          {clients.map((c) => (
+            <li><img src={asset(`brand/clientes/${c.file}`)} alt={c.name} /></li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -98,21 +93,25 @@ const description =
     <div class="wrap">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Especialistas</p>
-          <h2>Soluciones acústicas para empresas</h2>
+          <p class="eyebrow">Servicios</p>
+          <h2>La misma oferta, ordenada por lo que necesita</h2>
         </div>
-        <p>Estudiamos la contaminación acústica y diseñamos proyectos a medida. El equipo se forma de manera continua para mantener la innovación y la calidad que cada encargo necesita.</p>
+        <p>Medir y certificar, proyectar o ejecutar. Los nombres coinciden con la página de Servicios y cada enlace lleva a su ficha.</p>
       </div>
-      <div class="grid-4">
-        {services.map((s) => (
-          <a class="card" href={href(s.href)}>
-            <span class="num">{s.n}</span>
-            <h3>{s.title}</h3>
-            <p>{s.text}</p>
-            <span class="more">Saber más</span>
-          </a>
-        ))}
-      </div>
+      {serviceGroups.map((group) => (
+        <div class="service-group">
+          <p class="eyebrow">{group.label}</p>
+          <div class="service-grid">
+            {group.items.map((s) => (
+              <a class="card" href={href(s.href)}>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+                <span class="more">Saber más</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -173,6 +172,7 @@ const description =
             <img src={p.image ? asset(`media/${p.image}`) : asset("media/auditorio.webp")} alt="" loading="lazy" />
             <div>
               <h2>{p.title}</h2>
+              {(p.client || p.date) && <p class="meta">{[p.client, p.date].filter(Boolean).join(" · ")}</p>}
             </div>
           </a>
         ))}
@@ -215,25 +215,13 @@ const description =
   </section>
 
   <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <p class="eyebrow">Clientes</p>
-      <h2>Algunos de los equipos con los que hemos trabajado</h2>
-      <p>Una selección de los logos publicados en la web actual. La relación incluye consultoría acústica e instalaciones.</p>
-      <ul class="logo-row">
-        {clients.map((c) => (
-          <li><img src={asset(`brand/clientes/${c.file}`)} alt={c.name} /></li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0">
     <div class="wrap" style="display:grid;grid-template-columns:1.1fr .9fr;gap:1.2rem;align-items:start;">
       <div class="cta">
         <p class="eyebrow" style="color:#d5e4f7">Presupuesto</p>
         <h2>El silencio es tranquilidad. Y tu tranquilidad es Acusttel.</h2>
         <p>La trayectoria de la consultora está en la obra hecha y en el criterio con el que se encara cada encargo.</p>
-        <a class="btn btn-primary" href={href("/solicitud-presupuesto/")}>Pide presupuesto</a>
+        <a class="btn btn-primary" href={href("/solicitud-presupuesto/")}>Pedir presupuesto</a>
+        <a class="btn btn-ghost" href={`tel:${phoneTel}`}>Habla con un técnico</a>
       </div>
       <div>
         <h2>Déjanos tus datos</h2>

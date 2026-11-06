@@ -12,6 +12,7 @@ const { blocks } = Astro.props;
 <div class="prose">
   {blocks.map((block) => {
     if (block.t === "p") return <p>{block.text}</p>;
+    if (block.t === "kicker") return <p class="eyebrow">{block.text}</p>;
     if (block.t === "h2") return <h2>{block.text}</h2>;
     if (block.t === "h3") return <h3>{block.text}</h3>;
     if (block.t === "ul") return <ul>{block.items.map((item) => <li>{item}</li>)}</ul>;

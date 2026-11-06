@@ -184,6 +184,9 @@ function newsLabel(categories: string[]) {
                 <div>
                   <p class="meta">{item.categoryLabels.join(" · ") || "Proyecto"}</p>
                   <h2>{item.title}</h2>
+                  {(item.client || item.date) && (
+                    <p class="meta">{[item.client, item.date].filter(Boolean).join(" · ")}</p>
+                  )}
                 </div>
               </a>
             ))}
@@ -207,7 +210,26 @@ function newsLabel(categories: string[]) {
       {project && (
         <article class="prose">
           {project.categoryLabels.length > 0 && <p class="meta">{project.categoryLabels.join(" · ")}</p>}
-          {project.text ? <p>{project.text}</p> : <p>La ficha original no incluía una descripción más larga que el título.</p>}
+          <dl class="case-facts">
+            {project.client && (
+              <div>
+                <dt>Cliente</dt>
+                <dd>{project.client}</dd>
+              </div>
+            )}
+            {project.date && (
+              <div>
+                <dt>Fecha</dt>
+                <dd>{project.date}</dd>
+              </div>
+            )}
+            {project.detail && (
+              <div>
+                <dt>Encargo</dt>
+                <dd>{project.detail}</dd>
+              </div>
+            )}
+          </dl>
           {project.image && (
             <img src={asset(`media/${project.image}`)} alt="Portada original del estudio de protección acústica del nuevo acceso ferroviario de Levante, abril de 2011." />
           )}
