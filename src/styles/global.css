@@ -141,12 +141,17 @@ p { margin: 0 0 1rem; }
 }
 .site-nav { margin-left: auto; }
 .logo {
-  background: white;
-  border-radius: 0.7rem;
-  padding: 0.28rem 0.55rem 0.2rem;
+  display: inline-flex;
   line-height: 0;
+  background: none;
+  padding: 0;
 }
-.logo img { width: 158px; height: auto; }
+.logo img { width: 168px; height: auto; }
+.logo-for-dark { display: none; }
+.site-header.is-overlay:not(.is-open) .logo-for-light { display: none; }
+.site-header.is-overlay:not(.is-open) .logo-for-dark { display: block; }
+.site-footer .logo-for-light { display: none; }
+.site-footer .logo-for-dark { display: block; }
 
 .header-tools { display: flex; align-items: center; gap: 0.45rem; }
 .header-call {
