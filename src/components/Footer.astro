@@ -11,8 +11,9 @@ const servicios = nav[2];
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a href={href("/")} aria-label="Acusttel, inicio">
-          <img src={asset("brand/acusttel.gif")} width="300" height="93" alt="Acusttel" style="width:150px;height:auto;background:#fff;border-radius:10px;padding:6px 8px;" />
+        <a class="logo" href={href("/")} aria-label="Acusttel, inicio">
+          <img class="logo-for-light" src={asset("brand/acusttel-dark.png")} width="393" height="71" alt="" />
+          <img class="logo-for-dark" src={asset("brand/acusttel-light.png")} width="393" height="71" alt="Acusttel" />
         </a>
         <p>
           {addressLines.map((line) => (
